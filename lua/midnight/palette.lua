@@ -50,6 +50,7 @@ end
 ---@field diff_add? string
 ---@field diff_delete? string
 ---@field diff_change? string
+---@field cursor_bg? string
 
 ---@type Palette
 M.midnight = {
@@ -86,6 +87,10 @@ M.midnight = {
   diff_add = '#47583b',
   diff_delete = '#703535',
   diff_change = '#3b4b6d',
+
+  -- Cursor color: base color blended at 70% with visual bg (#121212)
+  cursor_bg = M.blend('#e5c07b', '#121212', 0.7),
+  -- cursor_bg = '#907a51',
 }
 
 ---@type Palette
@@ -120,6 +125,10 @@ M.daylight = {
   diff_add = '#a5c5ab',
   diff_delete = '#e2a1b2',
   diff_change = '#aab7ea',
+
+  -- Cursor color: base color blended at 60% with visual bg (#121212)
+  -- cursor_bg = M.blend('#996800', '#f5f5f5', 0.6),
+  cursor_bg = '#bda062',
 }
 
 ---@param name? 'midnight'|'daylight'

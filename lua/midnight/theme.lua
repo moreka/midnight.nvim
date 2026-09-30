@@ -61,21 +61,22 @@ function M.apply(name)
   hi('Normal', { fg = cs.background, bg = cs.foreground })
   hi('Identifier', { fg = cs.background })
   hi('Special', { fg = cs.magenta })
-  hi(
-    'StatusLine',
-    { fg = cs.background, bg = cs.foreground },
-    { 'StatusLineNC', 'Winbar', 'WinbarNC' }
-  )
-  hi('NonText', { fg = cs.grey }, { 'SpecialKey' })
+  hi('StatusLine', { fg = cs.background, bg = cs.dark_grey }, { 'Winbar', 'WinbarNC' })
+  hi('StatusLineNC', { fg = cs.light_black, bg = cs.foreground })
+  hi('NonText', { fg = cs.cyan }, { 'SpecialKey' })
+  hi('EndOfBuffer', { fg = cs.grey })
 
   hi('LineNr', { fg = cs.light_black }, { 'SignColumn' })
-  hi('CursorLine', { bg = cs.dark_grey, underline = false }, { 'ColorColumn', 'Folded', 'Visual' })
+  hi('CursorLine', { bg = cs.dark_grey, underline = false }, { 'ColorColumn', 'Folded' })
   hi('CursorLineNr', { fg = cs.medium_emphasis })
+  hi('Visual', { bg = cs.grey, underline = false })
+
+  hi('Cursor', { fg = cs.background, bg = cs.cursor_bg }, { 'CursorIM', 'lCursor' })
 
   hi('Conceal', { fg = cs.light_black, bg = cs.foreground })
   hi('Directory', { fg = cs.blue })
   hi('Error', { fg = cs.red })
-  hi('ErrorMsg', { bold = true, underline = true, fg = cs.red })
+  hi('ErrorMsg', { fg = cs.red })
   hi('MoreMsg', { fg = cs.yellow }, { 'WarningMsg' })
   hi('MatchParen', { reverse = true })
   hi('NormalFloat', { bg = cs.foreground }, { 'FloatShadow', 'FloatShadowThrough' })
@@ -85,6 +86,12 @@ function M.apply(name)
   hi('qfLineNr', { fg = cs.light_black })
   hi('qfSeparator', { fg = cs.light_black })
   hi('Whitespace', { fg = cs.grey })
+
+  hi(
+    'LspReferenceText',
+    { bg = cs.dark_grey, underline = false },
+    { 'LspReferenceRead', 'LspReferenceWrite' }
+  )
 
   tshi('Boolean', { fg = cs.green }, { '@constant.builtin' })
   tshi('Comment', { fg = cs.light_black })
@@ -178,6 +185,7 @@ function M.apply(name)
   hi('@markup.heading.gitcommit', { none = true })
 
   hi('@function.latex', { fg = cs.blue })
+  hi('@markup.math.latex', { fg = cs.green })
 
   hi('GitSignsCurrentLineBlame', { italic = true, fg = cs.light_black })
   hi('GitSignsAdd', { fg = cs.green })
